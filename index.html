@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>Penn State Smeal College of Business</title>
+	<link rel="shortcut icon" href="https://directory.smeal.psu.edu/theme/img/favicon.ico">
+	
+	<link rel="stylesheet" href="./profile_files/font-awesome.min.css">
+	<link rel="stylesheet" href="./profile_files/theme-import.css">
+	<link rel="stylesheet" href="./profile_files/theme-base.min.css">
+	<link rel="stylesheet" href="./profile_files/theme-echo.css">
+
+  <link rel="stylesheet" href="./profile_files/profile.css">
+
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="//directory.smeal.psu.edu/theme/js/html5shiv-printshiv_respond.min.js"></script>
+	<![endif]-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script>
+      $("document").ready(function() {
+		var user_id = window.location.hash.substr(1);
+        $.get('https://stage.metadata.libraries.psu.edu/v1/users/' + user_id + '/profile', function(profile_html) {
+          $("#profile").append(profile_html);
+        })
+      });
+    </script>
+</head>
+
+<body id="top">
+
+<div class="container-fluid">
+
+<div id="top-links" class="row hidden-print" role="navigation" aria-label="Secondary Links">
+	<div class="col-xs-12">
+		<ul class="list-inline pull-right">
+			<li><a href="#">News</a></li>
+			<li><a href="#">Events</a></li>
+			<li><a href="#">Students</a></li>
+			<li><a href="#">Alumni</a></li>
+			<li><a href="#">Companies</a></li>
+			<li><a href="#">Donors</a></li>
+			<li><a href="#">Employee Resources</a></li>
+			<li><a href="#">Directory</a></li>
+			<li><a href="#" title="Site Search"><i class="fa fa-search"></i></a></li>
+		</ul>
+	</div>
+</div>
+
+<div id="header" class="row">
+	<div class="col-xs-12">
+	<div class="row">
+		<div class="col-xs-11 col-sm-5 pull-left" role="banner">
+			<img src="./profile_files/smeal-logo-web-286x62-2x.png" id="logo" class="img-responsive" alt="Penn State Shield and Smeal College of Business Logo" usemap="#Map" width="286px" height="62px">
+			<map name="Map" id="Map">
+				<area shape="rect" coords="0,0,62,62" href="#" alt="Penn State University Official Homepage" title="Penn State University Homepage" target="_self">
+				<area shape="rect" coords="62,0,194,28" href="#" alt="Penn State University Official Homepage" title="Penn State University Homepage" target="_self">
+				<area shape="rect" coords="62,28,285,55" href="#" alt="Smeal College of Business Official Homepage" title="Smeal College of Business Homepage" target="_self">
+			</map>
+		</div>
+
+		<div class="col-xs-1 col-sm-7 text-center" role="navigation" aria-label="Primary Links">
+			<ul class="pagination navigation pull-right">
+			
+				<li class="hidden-xs">
+					<a href="#">About<br>Smeal</a>
+				</li>
+				<li class="hidden-xs">
+					<a href="#">Academic<br>Programs</a>
+				</li>
+				<li class="hidden-xs">
+					<a href="#">Executive<br>Education</a>
+				</li>
+				<li class="hidden-xs">
+					<a href="#">Academic<br>Departments</a>
+				</li>
+				<li class="hidden-xs">
+					<a href="#">Faculty &amp;<br>Research</a>
+				</li>
+				<li class="visible-xs">
+					<a href="#" title="Site Search">
+						<i class="fa fa-lg fa-fw fa-search" aria-hidden="true"></i>
+					</a>
+				</li>
+			
+			</ul>
+		</div>
+	</div>
+	</div>
+</div>
+</div>
+
+<div class="container">
+  <div class="row content_well" role="main">
+	  <div class="col-sm-12">
+      <br/>
+      <br/>
+
+      <div id="profile">
+        <div id="profile-photo" class="media-left">
+          <a href="https://media.smeal.psu.edu/content_php/directory/photos/nophoto-web.jpg" title="Download Print Quality Photo"><img class="media-object" width="200" height="300" src="./profile_files/nophoto-web.jpg"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+
+<div id="footer" class="row hidden-print" role="contentinfo">
+	<div class="col-xs-12">
+		<div id="footer-social">
+			<p>Connect with Smeal</p>
+			<ul class="list-inline">
+				<li><a href="#" title="Smeal on Facebook"><i class="fa fa-2x fa-facebook-square"></i></a></li>
+				<li><a href="#" title="Smeal on Twitter"><i class="fa fa-2x fa-twitter-square"></i></a></li>
+				<li><a href="#" title="Smeal on Instagram"><i class="fa fa-2x fa-instagram"></i></a></li>
+				<li><a href="#" title="Smeal on Vimeo"><i class="fa fa-2x fa-vimeo-square"></i></a></li>
+				<li><a href="#" title="Smeal on Linkedin"><i class="fa fa-2x fa-linkedin-square"></i></a></li>
+			</ul>
+		</div>
+
+		<ul class="list-inline" id="footer-address">
+			<li>Office of the Dean, 210 Business Building, University Park, Pennsylvania 16802</li>
+			<li>814-863-0448</li>
+			<li><a href="#">Contact Us</a></li>
+		</ul>
+
+		<ul class="list-inline" id="footer-address">
+			<li><a href="#">Hotlines</a></li>
+			<li><a href="#">Integrity Resources</a></li>
+		</ul>
+
+		<ul class="list-inline" id="footer-links">
+			<li><a href="#">© 1996-2018</a> <a href="#">The Pennsylvania State University</a> &amp; <a href="#">Smeal College of Business</a></li>
+			<li><a href="#">Privacy and Legal Statements</a></li>
+		</ul>
+	</div>
+</div>
+
+</div> <!-- /container -->
+
+<!--[if gte IE 9]><!-->
+	<script src="./profile_files/theme-high.min.js"></script>
+<!--<![endif]-->
+<script src="./profile_files/theme-base.min.js"></script><style>.accessibility{display: none}</style>
+
+<script type="text/javascript">
+$( document ).ready(function() {
+	// When the page scrolls, check to see if the scroll option should be toggled
+	$(window).scroll(function() {
+		if ($(this).scrollTop() > 200) {
+			$('#back-to-top').fadeIn(300);
+		} else {
+			$('#back-to-top').fadeOut(300);
+		}
+	});
+
+	// On page-load, check to see if the scroll option should be displayed
+	if ($(window).scrollTop() > 200) {
+		$('#back-to-top').fadeIn(300);
+	}
+
+	// On scroll-button click
+	$('#back-to-top').click(function(event) {
+		event.preventDefault();
+		$('html, body').animate({ scrollTop: 0 }, 300);
+		return false;
+	});
+});
+</script>
+
+<a id="back-to-top" href="#top" style="display: none;">Scroll to Top</a>
