@@ -17,16 +17,70 @@
 	<!--[if lt IE 9]>
 		<script src="//directory.smeal.psu.edu/theme/js/html5shiv-printshiv_respond.min.js"></script>
 	<![endif]-->
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
 
-    <script>
-      $("document").ready(function() {
-		var user_id = window.location.hash.substr(1);
-        $.get('https://stage.metadata.libraries.psu.edu/v1/users/' + user_id + '/profile', function(profile_html) {
-          $("#profile").append(profile_html);
-        })
-      });
-    </script>
+	<script id="profile-template" type="text/x-handlebars-template">
+		<div id="profile-photo" class="media-left">
+			<a href="https://media.smeal.psu.edu/content_php/directory/photos/nophoto-web.jpg" title="Download Print Quality Photo"><img class="media-object" width="200" height="300" src="./profile_files/nophoto-web.jpg"></a>
+		</div>
+		<h2 id="md-full-name">{{name}}</h2>
+		{{#if title}}
+			<span id="md-title">{{title}}</span>
+		{{/if}}
+		<div id="md-person-info">
+			<ul id="md-contact-info">
+				<li><strong>Email:</strong>  <a href="mailto:{{email}}">{{email}}</a></li>
+				{{#if office_location}}
+					<li><strong>Office:</strong>  {{office_location}}</li>
+				{{/if}}
+				{{#if personal_website}}
+					<li><strong>Personal website:</strong>  {{personal_website}}</li>
+				{{/if}}
+			</ul>
+			{{#if has_scopus_info}}
+				<ul>
+					{{#if has_scopus_citations}}
+						<li><strong>Citations:</strong>  {{total_scopus_citations}}</li>
+					{{/if}}
+					{{#if scopus_h_index}}
+						<li><strong>H-Index:</strong>  {{scopus_h_index}}</li>
+					{{/if}}
+					{{#if pure_profile_url}}
+						<li><a href="{{pure_profile_url}}" target="_blank">Pure Profile</a></li>
+					{{/if}}
+				</ul>
+			{{/if}}
+		</div>
+		<div id="tabs">
+			<ul>
+				{{#if bio}}
+					<li><a href="#md-bio">Bio</a></li>
+				{{/if}}
+				{{#if has_publications}}
+					<li><a href="#md-publications">Publications</a></li>
+				{{/if}}
+			</ul>
+			{{#if bio}}
+				<div id="md-bio">
+					<p>{{bio}}</p>
+				</div>
+			{{/if}}
+			{{#if has_publications}}
+				<div id="md-publications">
+					<ul>
+						{{#each publications}}
+							<li>{{this}}</li>
+						{{/each}}
+					</ul>
+				</div>
+			{{/if}}
+		</div>
+	</script>
+
+	<script src="./profile_files/profile.js"></script>
 </head>
 
 <body id="top">
@@ -99,9 +153,7 @@
       <br/>
 
       <div id="profile">
-        <div id="profile-photo" class="media-left">
-          <a href="https://media.smeal.psu.edu/content_php/directory/photos/nophoto-web.jpg" title="Download Print Quality Photo"><img class="media-object" width="200" height="300" src="./profile_files/nophoto-web.jpg"></a>
-        </div>
+				<!-- rendered profile template gets inserted here -->
       </div>
     </div>
   </div>
@@ -142,9 +194,6 @@
 
 </div> <!-- /container -->
 
-<!--[if gte IE 9]><!-->
-	<script src="./profile_files/theme-high.min.js"></script>
-<!--<![endif]-->
 <script src="./profile_files/theme-base.min.js"></script><style>.accessibility{display: none}</style>
 
 <script type="text/javascript">
