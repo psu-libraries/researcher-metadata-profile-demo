@@ -13,6 +13,21 @@ $("document").ready(function() {
     context.has_publications = function(){
       return this.publications.length > 0;
     }
+    context.has_grants = function(){
+      return this.grants.length > 0;
+    }
+    context.has_presentations = function(){
+      return this.presentations.length > 0;
+    }
+    context.has_performances = function(){
+      return this.performances.length > 0;
+    }
+    context.has_advising_roles = function(){
+      return this.advising_roles.length > 0;
+    }
+    context.has_news_stories = function(){
+      return this.news_stories.length > 0;
+    }
 
     var source   = document.getElementById("profile-template").innerHTML;
     var template = Handlebars.compile(source);

@@ -62,6 +62,21 @@
 				{{#if has_publications}}
 					<li><a href="#md-publications">Publications</a></li>
 				{{/if}}
+				{{#if has_grants}}
+					<li><a href="#md-grants">Grants</a></li>
+				{{/if}}
+				{{#if has_presentations}}
+					<li><a href="#md-presentations">Presentations</a></li>
+        {{/if}}
+        {{#if has_performances}}
+          <li><a href="#md-performances">Performances</a></li>
+        {{/if}}
+        {{#if has_advising_roles}}
+          <li><a href="#md-advising-roles">Advising</a></li>
+        {{/if}}
+        {{#if has_news_stories}}
+          <li><a href="#md-news-stories">News</a></li>
+        {{/if}}
 			</ul>
 			{{#if bio}}
 				<div id="md-bio">
@@ -76,7 +91,52 @@
 						{{/each}}
 					</ul>
 				</div>
-			{{/if}}
+      {{/if}}
+      {{#if has_grants}}
+        <div id="md-grants">
+          <ul>
+            {{#each grants}}
+              <li>{{this}}</li>
+            {{/each}}
+          </ul>
+        </div>
+      {{/if}}
+      {{#if has_presentations}}
+        <div id="md-presentations">
+          <ul>
+            {{#each presentations}}
+              <li>{{this}}</li>
+            {{/each}}
+          </ul>
+        </div>
+      {{/if}}
+      {{#if has_performances}}
+        <div id="md-performances">
+          <ul>
+            {{#each performances}}
+              <li>{{this}}</li>
+            {{/each}}
+          </ul>
+        </div>
+      {{/if}}
+      {{#if has_advising_roles}}
+        <div id="md-advising-roles">
+          <ul>
+            {{#each advising_roles}}
+              <li>{{this}}</li>
+            {{/each}}
+          </ul>
+        </div>
+      {{/if}}
+      {{#if has_news_stories}}
+        <div id="md-news-stories">
+          <ul>
+            {{#each news_stories}}
+              <li>{{this}}</li>
+            {{/each}}
+          </ul>
+        </div>
+      {{/if}}
 		</div>
 	</script>
 
