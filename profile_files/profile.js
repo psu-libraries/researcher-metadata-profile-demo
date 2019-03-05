@@ -1,6 +1,6 @@
 $("document").ready(function() {
   var user_id = window.location.hash.substr(1);
-  var profile_api_url = 'https://stage.metadata.libraries.psu.edu/v1/users/' + user_id + '/profile';
+  var profile_api_url = 'http://psu-research-metadata.test/v1/users/' + user_id + '/profile';
 
   var render_profile = function(profile_data) {
     var context = profile_data.data.attributes;

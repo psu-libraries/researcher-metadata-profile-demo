@@ -85,7 +85,7 @@
 			{{/if}}
 			{{#if has_publications}}
 				<div id="md-publications">
-					<ul>
+					<ul class="md-list">
 						{{#each publications}}
 							<li>{{this}}</li>
 						{{/each}}
@@ -94,7 +94,7 @@
       {{/if}}
       {{#if has_grants}}
         <div id="md-grants">
-          <ul>
+          <ul class="md-list">
             {{#each grants}}
               <li>{{this}}</li>
             {{/each}}
@@ -103,7 +103,7 @@
       {{/if}}
       {{#if has_presentations}}
         <div id="md-presentations">
-          <ul>
+          <ul class="md-list">
             {{#each presentations}}
               <li>{{this}}</li>
             {{/each}}
@@ -112,7 +112,7 @@
       {{/if}}
       {{#if has_performances}}
         <div id="md-performances">
-          <ul>
+          <ul class="md-list">
             {{#each performances}}
               <li>{{this}}</li>
             {{/each}}
@@ -121,7 +121,7 @@
       {{/if}}
       {{#if has_advising_roles}}
         <div id="md-advising-roles">
-          <ul>
+          <ul class="md-list">
             {{#each advising_roles}}
               <li>{{{this}}}</li>
             {{/each}}
@@ -130,7 +130,7 @@
       {{/if}}
       {{#if has_news_stories}}
         <div id="md-news-stories">
-          <ul>
+          <ul class="md-list">
             {{#each news_stories}}
               <li>{{{this}}}</li>
             {{/each}}
