@@ -47,3 +47,11 @@ h3 {
   margin: 40px 40px 0 0;
   padding: 0 40px 20px 0;
 }
+
+.publication-title {
+  font-weight: bold;
+}
+
+.journal-name {
+  font-style: italic;
+}
