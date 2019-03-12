@@ -55,7 +55,7 @@
 		</div>
 		<div id="tabs">
 			<ul class="nav nav-tabs">
-				{{#if bio}}
+				{{#if has_bio_info}}
 					<li><a href="#md-bio">Bio</a></li>
 				{{/if}}
 				{{#if has_publications}}
@@ -77,9 +77,18 @@
           <li><a href="#md-news-stories">News</a></li>
         {{/if}}
 			</ul>
-			{{#if bio}}
+			{{#if has_bio_info}}
 				<div id="md-bio">
+					<h3>Biography</h3>
 					<p>{{bio}}</p>
+					{{#if teaching_interests}}
+						<h3>Teaching Interests</h3>
+						<p>{{teaching_interests}}</p>
+					{{/if}}
+					{{#if research_interests}}
+						<h3>Research Interests</h3>
+						<p>{{research_interests}}</p>
+					{{/if}}
 				</div>
 			{{/if}}
 			{{#if has_publications}}

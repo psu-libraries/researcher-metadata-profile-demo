@@ -7,6 +7,9 @@ $("document").ready(function() {
     context.has_scopus_info = function(){
       return this.total_scopus_citations > 0 || this.scopus_h_index || this.pure_profile_url;
     }
+    context.has_bio_info = function(){
+      return this.bio || this.teaching_interests || this.research_interests;
+    }
     context.has_scopus_citations = function(){
       return this.total_scopus_citations > 0;
     }
