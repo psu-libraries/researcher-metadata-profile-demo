@@ -89,6 +89,14 @@
 						<h3>Research Interests</h3>
 						<p>{{research_interests}}</p>
 					{{/if}}
+					{{#if has_education_history}}
+						<h3>Education</h3>
+						<ul>
+							{{#each education_history}}
+								<li>{{this}}</li>
+							{{/each}}
+						</ul>
+					{{/if}}
 				</div>
 			{{/if}}
 			{{#if has_publications}}

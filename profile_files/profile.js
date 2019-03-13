@@ -8,7 +8,7 @@ $("document").ready(function() {
       return this.total_scopus_citations > 0 || this.scopus_h_index || this.pure_profile_url;
     }
     context.has_bio_info = function(){
-      return this.bio || this.teaching_interests || this.research_interests;
+      return this.bio || this.teaching_interests || this.research_interests || this.has_education_history;
     }
     context.has_scopus_citations = function(){
       return this.total_scopus_citations > 0;
@@ -30,6 +30,9 @@ $("document").ready(function() {
     }
     context.has_news_stories = function(){
       return this.news_stories.length > 0;
+    }
+    context.has_education_history = function(){
+      return this.education_history.length > 0;
     }
 
     var source   = document.getElementById("profile-template").innerHTML;
