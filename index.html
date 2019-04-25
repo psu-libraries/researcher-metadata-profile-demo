@@ -1,294 +1,339 @@
-<!DOCTYPE html>
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	<title>Profile Demo</title>
-	<link rel="shortcut icon" href="https://directory.smeal.psu.edu/theme/img/favicon.ico">
-	
-	<link rel="stylesheet" href="./profile_files/font-awesome.min.css">
-	<link rel="stylesheet" href="./profile_files/theme-import.css">
-	<link rel="stylesheet" href="./profile_files/theme-base.min.css">
-	<link rel="stylesheet" href="./profile_files/theme-echo.css">
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+		<meta charset="utf-8">
+		<title>Profile Demo</title>
+		<link rel="shortcut icon" href="https://directory.smeal.psu.edu/theme/img/favicon.ico">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="css/app.css">
+		
+    <script id="profile-template" type="text/x-handlebars-template">
+      <div class="grid-container">
+        <div class="grid-x grid-margin-x">
+          <div class="large-4 cell">
+              <div class="profile text-center">
+                <div class="profile-main">
+                  <img src="img/profile.png" alt="Profile" />
+                  <h2>{{name}}</h2>
+                  {{#if title}}
+                    <p class="role">{{title}}</p>
+                  {{/if}}
+                </div>
+                <div class="profile-info">
+                  <table>
+                    <tbody>
+                      {{#if office_location}}
+                        <tr>
+                          <td><img src="img/address.png" alt="Address" /></td>
+                          <td>{{office_location}}</td>
+                        </tr>
+                      {{/if}}
+                      <tr>
+                        <td><img src="img/email.png" alt="Email" /></td>
+                        <td><a href="mailto:{{email}}">{{email}}</a></td>
+                      </tr>
+                      {{#if scopus_h_index}}
+                        <tr>
+                          <td>H-index</td>
+                          <td>{{scopus_h_index}}</td>
+                        </tr>
+                      {{/if}}
+                      {{#if has_scopus_citations}}
+                        <tr> 
+                          <td>Citations</td>
+                          <td>{{total_scopus_citations}}</td>
+                        </tr>
+                      {{/if}}
+                    </tbody>
+                  </table>
+                  {{#if pure_profile_url}}
+                    <a href="{{pure_profile_url}}" target="_blank">Pure Profile</a>
+                  {{/if}}
+                </div>
+              </div>
+              <div class="research">
+                <h5>Research Interests</h5>
+                <div class="research-content">
+                  <p>
+                    I focus on questions about subsistence decisions and land use in Indigenous communities, exploring the dynamics of human hunting practices, their role in ecosystem function, and their archaeological implications. 
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="large-8 cell tabs-wrapper">
+              <ul class="tabs" data-tabs id="profile-tabs">
+                <li class="tabs-title is-active"><a href="#bio" data-tabs-target="bio" aria-selected="true">Bio</a></li>
+                <li class="tabs-title"><a href="#advising" data-tabs-target="advising">Advising</a></li>
+                <li class="tabs-title"><a href="#news" data-tabs-target="news">News</a></li>
+                <li class="tabs-title"><a href="#performances" data-tabs-target="performances">Performances</a></li>
+                <li class="tabs-title"><a href="#presentations" data-tabs-target="presentations">Presentations</a></li>
+                <li class="tabs-title"><a href="#publications" data-tabs-target="publications" >Publications</a></li>
+              </ul>
+              <div class="tabs-content" data-tabs-content="profile-tabs">
+                <div class="tabs-panel is-active" id="bio">
+                            
+                            {{#if teaching_interests}}
+                              <h3>Teaching Interests</h3>
+                              <p>{{teaching_interests}}</p>
+                            {{/if}}
+                            {{#if research_interests}}
+                              <h3>Research Interests</h3>
+                              <p>{{research_interests}}</p>
+                            {{/if}}
+                            {{#if has_education_history}}
+                              <h3>Education</h3>
+                              <ul>
+                                {{#each education_history}}
+                                  <li>{{this}}</li>
+                                {{/each}}
+                              </ul>
+                            {{/if}}
+                  {{#if bio}}          
+                    <h4>Biography</h4>
+                    <p>{{bio}}</p>
+                  {{/if}}
+                  
+                  <h4>Teaching Interests</h4>
+                  <p>
+                    Human dimensions of global ecosystems, ethnoarchaeology, evolutionary ecology and conservation, Indigenous Australia.
+                  </p>
+                  <h4>Research Interests</h4>
+                  <p>
+                    I focus on questions about subsistence decisions and land use in Indigenous communities, exploring the dynamics of human hunting practices, their role in ecosystem function, and their archaeological implications. Research is based mostly in Australia.
+                  </p>
+                  <h4>Education</h4>
+                  <ul class="unstyled">
+                    <li>PostD, Behavioral Ecology - University of Washington - 1999</li>
+                    <li>Ph D, Anthropology - University of California, Davis - 1996</li>
+                    <li>MA, Anthropology - University of California, Davis - 1993</li>
+                    <li>BA, Anthropology - University of Utah - 1991</li>
+                  </ul>
+                </div>
+                <div class="tabs-panel" id="advising">
+                  <h4>Advising</h4>
+                  <p>
+                    Nullam id dolor id nibh ultricies vehicula ut id elit. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Cras mattis consectetur purus sit amet fermentum. Donec sed odio dui. Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                  </p>
+                  <p>
+                    Nullam id dolor id nibh ultricies vehicula ut id elit. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Cras mattis consectetur purus sit amet fermentum. Donec sed odio dui. Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                  </p>
+                  <p>
+                    Nullam id dolor id nibh ultricies vehicula ut id elit. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Cras mattis consectetur purus sit amet fermentum. Donec sed odio dui. Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                  </p>
+                </div>
+                <div class="tabs-panel" id="news">
+                  <h4>News</h4>
+                  <p>
+                    Nullam id dolor id nibh ultricies vehicula ut id elit. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Cras mattis consectetur purus sit amet fermentum. Donec sed odio dui. Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                  </p>
+                  <p>
+                    Nullam id dolor id nibh ultricies vehicula ut id elit. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Cras mattis consectetur purus sit amet fermentum. Donec sed odio dui. Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                  </p>
+                  <p>
+                    Nullam id dolor id nibh ultricies vehicula ut id elit. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Cras mattis consectetur purus sit amet fermentum. Donec sed odio dui. Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                  </p>
+                </div>
+                <div class="tabs-panel" id="performances">
+                  <h4>Performances</h4>
+                  <p>
+                    Nullam id dolor id nibh ultricies vehicula ut id elit. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Cras mattis consectetur purus sit amet fermentum. Donec sed odio dui. Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                  </p>
+                  <p>
+                    Nullam id dolor id nibh ultricies vehicula ut id elit. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Cras mattis consectetur purus sit amet fermentum. Donec sed odio dui. Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                  </p>
+                  <p>
+                    Nullam id dolor id nibh ultricies vehicula ut id elit. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Cras mattis consectetur purus sit amet fermentum. Donec sed odio dui. Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                  </p>
+                </div>
+                <div class="tabs-panel" id="presentations">
+                  <h4>Presentations</h4>
+                  <p>
+                    Nullam id dolor id nibh ultricies vehicula ut id elit. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Cras mattis consectetur purus sit amet fermentum. Donec sed odio dui. Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                  </p>
+                  <p>
+                    Nullam id dolor id nibh ultricies vehicula ut id elit. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Cras mattis consectetur purus sit amet fermentum. Donec sed odio dui. Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                  </p>
+                  <p>
+                    Nullam id dolor id nibh ultricies vehicula ut id elit. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Cras mattis consectetur purus sit amet fermentum. Donec sed odio dui. Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                  </p>
+                </div>
+                <div class="tabs-panel" id="publications">
+                  <h4>Publications</h4>
+                  <p>
+                    Nullam id dolor id nibh ultricies vehicula ut id elit. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Cras mattis consectetur purus sit amet fermentum. Donec sed odio dui. Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                  </p>
+                  <p>
+                    Nullam id dolor id nibh ultricies vehicula ut id elit. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Cras mattis consectetur purus sit amet fermentum. Donec sed odio dui. Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                  </p>
+                  <p>
+                    Nullam id dolor id nibh ultricies vehicula ut id elit. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Cras mattis consectetur purus sit amet fermentum. Donec sed odio dui. Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-  <link rel="stylesheet" href="./profile_files/profile.css">
 
-	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="//directory.smeal.psu.edu/theme/js/html5shiv-printshiv_respond.min.js"></script>
-	<![endif]-->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
 
-	<script id="profile-template" type="text/x-handlebars-template">
-		<div id="profile-photo" class="media-left">
-			<img class="media-object" width="200" height="300" src="./profile_files/nophoto-web.jpg">
-		</div>
-		<h2 id="md-full-name">{{name}}</h2>
-		{{#if title}}
-			<span id="md-title">{{title}}</span>
-		{{/if}}
-		<div id="md-person-info">
-			<ul id="md-contact-info">
-				<li><strong>Email:</strong>  <a href="mailto:{{email}}">{{email}}</a></li>
-				{{#if office_location}}
-					<li><strong>Office:</strong>  {{office_location}}</li>
-				{{/if}}
-				{{#if personal_website}}
-					<li><strong>Personal website:</strong>  {{personal_website}}</li>
-				{{/if}}
-			</ul>
-			{{#if has_scopus_info}}
-				<ul>
-					{{#if has_scopus_citations}}
-						<li><strong>Citations:</strong>  {{total_scopus_citations}}</li>
+			<!-- 
+
+			<div id="tabs">
+				<ul class="nav nav-tabs">
+					{{#if has_publications}}
+						<li><a href="#md-publications">Publications</a></li>
 					{{/if}}
-					{{#if scopus_h_index}}
-						<li><strong>H-Index:</strong>  {{scopus_h_index}}</li>
+					{{#if has_grants}}
+						<li><a href="#md-grants">Grants</a></li>
 					{{/if}}
-					{{#if pure_profile_url}}
-						<li><a href="{{pure_profile_url}}" target="_blank">Pure Profile</a></li>
+					{{#if has_presentations}}
+						<li><a href="#md-presentations">Presentations</a></li>
+					{{/if}}
+					{{#if has_performances}}
+						<li><a href="#md-performances">Performances</a></li>
+					{{/if}}
+					{{#if has_advising_roles}}
+						<li><a href="#md-advising-roles">Advising</a></li>
+					{{/if}}
+					{{#if has_news_stories}}
+						<li><a href="#md-news-stories">News</a></li>
 					{{/if}}
 				</ul>
-			{{/if}}
-		</div>
-		<div id="tabs">
-			<ul class="nav nav-tabs">
-				{{#if has_bio_info}}
-					<li><a href="#md-bio">Bio</a></li>
-				{{/if}}
 				{{#if has_publications}}
-					<li><a href="#md-publications">Publications</a></li>
+					<div id="md-publications">
+						<ul class="md-list">
+							{{#each publications}}
+								<li>{{{this}}}</li>
+							{{/each}}
+						</ul>
+					</div>
 				{{/if}}
 				{{#if has_grants}}
-					<li><a href="#md-grants">Grants</a></li>
-				{{/if}}
-				{{#if has_presentations}}
-					<li><a href="#md-presentations">Presentations</a></li>
-        {{/if}}
-        {{#if has_performances}}
-          <li><a href="#md-performances">Performances</a></li>
-        {{/if}}
-        {{#if has_advising_roles}}
-          <li><a href="#md-advising-roles">Advising</a></li>
-        {{/if}}
-        {{#if has_news_stories}}
-          <li><a href="#md-news-stories">News</a></li>
-        {{/if}}
-			</ul>
-			{{#if has_bio_info}}
-				<div id="md-bio">
-					<h3>Biography</h3>
-					<p>{{bio}}</p>
-					{{#if teaching_interests}}
-						<h3>Teaching Interests</h3>
-						<p>{{teaching_interests}}</p>
-					{{/if}}
-					{{#if research_interests}}
-						<h3>Research Interests</h3>
-						<p>{{research_interests}}</p>
-					{{/if}}
-					{{#if has_education_history}}
-						<h3>Education</h3>
-						<ul>
-							{{#each education_history}}
+					<div id="md-grants">
+						<ul class="md-list">
+							{{#each grants}}
 								<li>{{this}}</li>
 							{{/each}}
 						</ul>
-					{{/if}}
-				</div>
-			{{/if}}
-			{{#if has_publications}}
-				<div id="md-publications">
-					<ul class="md-list">
-						{{#each publications}}
-							<li>{{{this}}}</li>
-						{{/each}}
-					</ul>
-				</div>
-      {{/if}}
-      {{#if has_grants}}
-        <div id="md-grants">
-          <ul class="md-list">
-            {{#each grants}}
-              <li>{{this}}</li>
-            {{/each}}
-          </ul>
+					</div>
+				{{/if}}
+				{{#if has_presentations}}
+					<div id="md-presentations">
+						<ul class="md-list">
+							{{#each presentations}}
+								<li>{{this}}</li>
+							{{/each}}
+						</ul>
+					</div>
+				{{/if}}
+				{{#if has_performances}}
+					<div id="md-performances">
+						<ul class="md-list">
+							{{#each performances}}
+								<li>{{this}}</li>
+							{{/each}}
+						</ul>
+					</div>
+				{{/if}}
+				{{#if has_advising_roles}}
+					<div id="md-advising-roles">
+						<ul class="md-list">
+							{{#each advising_roles}}
+								<li>{{{this}}}</li>
+							{{/each}}
+						</ul>
+					</div>
+				{{/if}}
+				{{#if has_news_stories}}
+					<div id="md-news-stories">
+						<ul class="md-list">
+							{{#each news_stories}}
+								<li>{{{this}}}</li>
+							{{/each}}
+						</ul>
+					</div>
+				{{/if}}
+			</div> -->
+		</script>
+	</head>
+	
+
+  <body>
+    <div class="title-bar" data-responsive-toggle="lower-nav" data-hide-for="large">
+      <a href="#"><img src="img/logo.png" alt="Penn State" /></a>
+        <div class="title-bar-right">
+          <button class="menu-icon" type="button" data-toggle="lower-nav"></button>
         </div>
-      {{/if}}
-      {{#if has_presentations}}
-        <div id="md-presentations">
-          <ul class="md-list">
-            {{#each presentations}}
-              <li>{{this}}</li>
-            {{/each}}
-          </ul>
-        </div>
-      {{/if}}
-      {{#if has_performances}}
-        <div id="md-performances">
-          <ul class="md-list">
-            {{#each performances}}
-              <li>{{this}}</li>
-            {{/each}}
-          </ul>
-        </div>
-      {{/if}}
-      {{#if has_advising_roles}}
-        <div id="md-advising-roles">
-          <ul class="md-list">
-            {{#each advising_roles}}
-              <li>{{{this}}}</li>
-            {{/each}}
-          </ul>
-        </div>
-      {{/if}}
-      {{#if has_news_stories}}
-        <div id="md-news-stories">
-          <ul class="md-list">
-            {{#each news_stories}}
-              <li>{{{this}}}</li>
-            {{/each}}
-          </ul>
-        </div>
-      {{/if}}
-		</div>
-	</script>
-
-	<script src="./profile_files/profile.js"></script>
-</head>
-
-<body id="top">
-
-<div class="container-fluid">
-
-<div id="top-links" class="row hidden-print" role="navigation" aria-label="Secondary Links">
-	<div class="col-xs-12">
-		<ul class="list-inline pull-right">
-			<li><a href="#">News</a></li>
-			<li><a href="#">Events</a></li>
-			<li><a href="#">Students</a></li>
-			<li><a href="#">Alumni</a></li>
-			<li><a href="#">Companies</a></li>
-			<li><a href="#">Donors</a></li>
-			<li><a href="#">Employee Resources</a></li>
-			<li><a href="#">Directory</a></li>
-			<li><a href="#" title="Site Search"><i class="fa fa-search"></i></a></li>
-		</ul>
-	</div>
-</div>
-
-<div id="header" class="row">
-	<div class="col-xs-12">
-	<div class="row">
-		<div class="col-xs-11 col-sm-5 pull-left" role="banner">
-			<img src="./profile_files/logo.png" id="logo" class="img-responsive" alt="Penn State Shield" usemap="#Map" width="194px" height="62px">
-			<map name="Map" id="Map">
-				<area shape="rect" coords="0,0,62,62" href="#" alt="Penn State University Official Homepage" title="Penn State University Homepage" target="_self">
-				<area shape="rect" coords="62,0,194,28" href="#" alt="Penn State University Official Homepage" title="Penn State University Homepage" target="_self">
-				<area shape="rect" coords="62,28,285,55" href="#" alt="" title="" target="_self">
-			</map>
-		</div>
-
-		<div class="col-xs-1 col-sm-7 text-center" role="navigation" aria-label="Primary Links">
-			<ul class="pagination navigation pull-right">
-			
-				<li class="hidden-xs">
-					<a href="#">Academic<br>Programs</a>
-				</li>
-				<li class="hidden-xs">
-					<a href="#">Executive<br>Education</a>
-				</li>
-				<li class="hidden-xs">
-					<a href="#">Academic<br>Departments</a>
-				</li>
-				<li class="hidden-xs">
-					<a href="#">Faculty &amp;<br>Research</a>
-				</li>
-				<li class="visible-xs">
-					<a href="#" title="Site Search">
-						<i class="fa fa-lg fa-fw fa-search" aria-hidden="true"></i>
-					</a>
-				</li>
-			
-			</ul>
-		</div>
-	</div>
-	</div>
-</div>
-</div>
-
-<div class="container">
-  <div class="row content_well" role="main">
-	  <div class="col-sm-12">
-      <br/>
-      <br/>
-
-      <div id="profile">
-				<!-- rendered profile template gets inserted here -->
-      </div>
     </div>
-  </div>
-</div>
-
-<div class="container-fluid">
-
-<div id="footer" class="row hidden-print" role="contentinfo">
-	<div class="col-xs-12">
-		<div id="footer-social">
-			<ul class="list-inline">
-				<li><a href="#" title="Facebook"><i class="fa fa-2x fa-facebook-square"></i></a></li>
-				<li><a href="#" title="Twitter"><i class="fa fa-2x fa-twitter-square"></i></a></li>
-				<li><a href="#" title="Instagram"><i class="fa fa-2x fa-instagram"></i></a></li>
-				<li><a href="#" title="Vimeo"><i class="fa fa-2x fa-vimeo-square"></i></a></li>
-				<li><a href="#" title="Linkedin"><i class="fa fa-2x fa-linkedin-square"></i></a></li>
-			</ul>
-		</div>
-
-		<ul class="list-inline" id="footer-address">
-			<li><a href="#">Contact Us</a></li>
-		</ul>
-
-		<ul class="list-inline" id="footer-address">
-			<li><a href="#">Hotlines</a></li>
-			<li><a href="#">Integrity Resources</a></li>
-		</ul>
-
-		<ul class="list-inline" id="footer-links">
-			<li><a href="#">© 1996-2018</a> <a href="#">The Pennsylvania State University</a></li>
-			<li><a href="#">Privacy and Legal Statements</a></li>
-		</ul>
-	</div>
-</div>
-
-</div> <!-- /container -->
-
-<script src="./profile_files/theme-base.min.js"></script><style>.accessibility{display: none}</style>
-
-<script type="text/javascript">
-$( document ).ready(function() {
-	// When the page scrolls, check to see if the scroll option should be toggled
-	$(window).scroll(function() {
-		if ($(this).scrollTop() > 200) {
-			$('#back-to-top').fadeIn(300);
-		} else {
-			$('#back-to-top').fadeOut(300);
-		}
-	});
-
-	// On page-load, check to see if the scroll option should be displayed
-	if ($(window).scrollTop() > 200) {
-		$('#back-to-top').fadeIn(300);
-	}
-
-	// On scroll-button click
-	$('#back-to-top').click(function(event) {
-		event.preventDefault();
-		$('html, body').animate({ scrollTop: 0 }, 300);
-		return false;
-	});
-});
-</script>
-
-<a id="back-to-top" href="#top" style="display: none;">Scroll to Top</a>
+    <nav id="upper-nav-wrapper" >
+      <ul class="menu vertical large-horizontal align-right" id="upper-nav" >
+        <li><a href="#">News</a></li>
+        <li><a href="#">Events</a></li>
+        <li><a href="#">Students</a></li>
+        <li><a href="#">Alumni</a></li>
+        <li><a href="#">Companies</a></li>
+        <li><a href="#">Donors</a></li>
+        <li><a href="#">Employee Resources</a></li>
+        <li><a href="#">Directory</a></li>
+        <li><a href="#" title="Site Search"><img src="img/search.png" alt="Search" /></a></li>
+      </ul>
+    </nav>
+    <div class="top-bar" id="lower-nav">
+      <div class="top-bar-left show-for-large">
+        <a href="#"><img src="img/logo.png" alt="Penn State" /></a>
+      </div>
+      <nav class="top-bar-right">
+        <ul class="menu vertical large-horizontal">
+          <li>
+            <a href="#">Academic Programs</a>
+          </li>
+          <li>
+            <a href="#">Executive Education</a>
+          </li>
+          <li>
+            <a href="#">Academic Departments</a>
+          </li>
+          <li>
+            <a href="#">Faculty &amp; Research</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div id="profile">
+      <!-- rendered profile template gets inserted here -->
+    </div>
+    <footer>
+      <div class="grid-x grid-margin-x">
+        <nav class="cell">
+          <ul class="menu social align-center">
+            <li><a href="#"><img src="img/facebook.png" alt="Facebook" /></a></li>
+            <li><a href="#"><img src="img/twitter.png" alt="Twitter" /></a></li>
+            <li><a href="#"><img src="img/instagram.png" alt="Instagram" /></a></li>
+            <li><a href="#"><img src="img/vimeo.png" alt="Vimeo" /></a></li>
+            <li><a href="#"><img src="img/linkedin.png" alt="Linkedin" /></a></li>
+          </ul>
+          <ul class="menu links align-center">
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Hotlines</a></li>
+            <li><a href="#">Integrity Resources</a></li>
+            <li><a href="#">&copy; 2019 The Pennsylvania State University</a></li>
+            <li><a href="#">Privacy and Legal Statements</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/foundation.core.min.js"></script>
+    <script src="js/foundation.util.keyboard.min.js"></script>
+    <script src="js/foundation.util.imageLoader.min.js"></script>
+    <script src="js/foundation.util.mediaQuery.min.js"></script>
+    <script src="js/foundation.util.triggers.min.js"></script>
+    <script src="js/foundation.util.motion.min.js"></script>
+    <script src="js/foundation.responsiveMenu.min.js"></script>
+    <script src="js/foundation.responsiveToggle.min.js"></script>
+		<script src="js/foundation.tabs.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
+		<script src="js/profile.js"></script>
+  </body>
+</html>
