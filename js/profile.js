@@ -40,6 +40,13 @@ $("document").ready(function() {
     var rendered_html = template(context);
     $('#profile').append(rendered_html);
 
+    if($('ul#profile-tabs').children().length > 0) {
+      $('ul#profile-tabs').children().first().addClass('is-active');
+      $('ul#profile-tabs:first-child').attr('aria-selected', 'true');
+
+      $('div#profile-tabs-content').children().first().addClass('is-active');
+    }
+
     $(document).foundation();
 
     // Scroll
