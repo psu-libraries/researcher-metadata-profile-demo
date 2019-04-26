@@ -52,213 +52,125 @@
                   {{/if}}
                 </div>
               </div>
-              <div class="research">
-                <h5>Research Interests</h5>
-                <div class="research-content">
-                  <p>
-                    I focus on questions about subsistence decisions and land use in Indigenous communities, exploring the dynamics of human hunting practices, their role in ecosystem function, and their archaeological implications. 
-                  </p>
-                </div>
-              </div>
+              {{#if research_interests}}
+                <div class="research">
+                  <h5>Research Interests</h5>
+                  <div class="research-content">
+                    <p>{{research_interests}}</p>
+                  </div>
+                </div>                                  
+              {{/if}}
             </div>
             <div class="large-8 cell tabs-wrapper">
               <ul class="tabs" data-tabs id="profile-tabs">
-                <li class="tabs-title is-active"><a href="#bio" data-tabs-target="bio" aria-selected="true">Bio</a></li>
-                <li class="tabs-title"><a href="#advising" data-tabs-target="advising">Advising</a></li>
-                <li class="tabs-title"><a href="#news" data-tabs-target="news">News</a></li>
-                <li class="tabs-title"><a href="#performances" data-tabs-target="performances">Performances</a></li>
-                <li class="tabs-title"><a href="#presentations" data-tabs-target="presentations">Presentations</a></li>
-                <li class="tabs-title"><a href="#publications" data-tabs-target="publications" >Publications</a></li>
+                {{#if has_bio_info}}
+                  <li class="tabs-title"><a href="#bio" data-tabs-target="bio">Bio</a></li>
+                {{/if}}
+                {{#if has_publications}}
+                  <li class="tabs-title"><a href="#publications" data-tabs-target="publications">Publications</a></li>
+                {{/if}}
+                {{#if has_grants}}
+                  <li class="tabs-title"><a href="#grants" data-tabs-target="grants">Grants</a></li>
+                {{/if}}
+                {{#if has_presentations}}
+                  <li class="tabs-title"><a href="#presentations" data-tabs-target="presentations">Presentations</a></li>
+                {{/if}}
+                {{#if has_performances}}
+                  <li class="tabs-title"><a href="#performances" data-tabs-target="performances">Performances</a></li>
+                {{/if}}
+                {{#if has_advising_roles}}
+                  <li class="tabs-title"><a href="#advising" data-tabs-target="advising">Advising</a></li>
+                {{/if}}
+                {{#if has_news_stories}}
+                  <li class="tabs-title"><a href="#news" data-tabs-target="news">News</a></li>
+                {{/if}}                
               </ul>
-              <div class="tabs-content" data-tabs-content="profile-tabs">
-                <div class="tabs-panel is-active" id="bio">
-                            
-                            {{#if teaching_interests}}
-                              <h3>Teaching Interests</h3>
-                              <p>{{teaching_interests}}</p>
-                            {{/if}}
-                            {{#if research_interests}}
-                              <h3>Research Interests</h3>
-                              <p>{{research_interests}}</p>
-                            {{/if}}
-                            {{#if has_education_history}}
-                              <h3>Education</h3>
-                              <ul>
-                                {{#each education_history}}
-                                  <li>{{this}}</li>
-                                {{/each}}
-                              </ul>
-                            {{/if}}
-                  {{#if bio}}          
-                    <h4>Biography</h4>
-                    <p>{{bio}}</p>
-                  {{/if}}
-                  
-                  <h4>Teaching Interests</h4>
-                  <p>
-                    Human dimensions of global ecosystems, ethnoarchaeology, evolutionary ecology and conservation, Indigenous Australia.
-                  </p>
-                  <h4>Research Interests</h4>
-                  <p>
-                    I focus on questions about subsistence decisions and land use in Indigenous communities, exploring the dynamics of human hunting practices, their role in ecosystem function, and their archaeological implications. Research is based mostly in Australia.
-                  </p>
-                  <h4>Education</h4>
-                  <ul class="unstyled">
-                    <li>PostD, Behavioral Ecology - University of Washington - 1999</li>
-                    <li>Ph D, Anthropology - University of California, Davis - 1996</li>
-                    <li>MA, Anthropology - University of California, Davis - 1993</li>
-                    <li>BA, Anthropology - University of Utah - 1991</li>
-                  </ul>
-                </div>
-                <div class="tabs-panel" id="advising">
-                  <h4>Advising</h4>
-                  <p>
-                    Nullam id dolor id nibh ultricies vehicula ut id elit. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Cras mattis consectetur purus sit amet fermentum. Donec sed odio dui. Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                  </p>
-                  <p>
-                    Nullam id dolor id nibh ultricies vehicula ut id elit. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Cras mattis consectetur purus sit amet fermentum. Donec sed odio dui. Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                  </p>
-                  <p>
-                    Nullam id dolor id nibh ultricies vehicula ut id elit. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Cras mattis consectetur purus sit amet fermentum. Donec sed odio dui. Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                  </p>
-                </div>
-                <div class="tabs-panel" id="news">
-                  <h4>News</h4>
-                  <p>
-                    Nullam id dolor id nibh ultricies vehicula ut id elit. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Cras mattis consectetur purus sit amet fermentum. Donec sed odio dui. Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                  </p>
-                  <p>
-                    Nullam id dolor id nibh ultricies vehicula ut id elit. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Cras mattis consectetur purus sit amet fermentum. Donec sed odio dui. Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                  </p>
-                  <p>
-                    Nullam id dolor id nibh ultricies vehicula ut id elit. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Cras mattis consectetur purus sit amet fermentum. Donec sed odio dui. Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                  </p>
-                </div>
-                <div class="tabs-panel" id="performances">
-                  <h4>Performances</h4>
-                  <p>
-                    Nullam id dolor id nibh ultricies vehicula ut id elit. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Cras mattis consectetur purus sit amet fermentum. Donec sed odio dui. Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                  </p>
-                  <p>
-                    Nullam id dolor id nibh ultricies vehicula ut id elit. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Cras mattis consectetur purus sit amet fermentum. Donec sed odio dui. Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                  </p>
-                  <p>
-                    Nullam id dolor id nibh ultricies vehicula ut id elit. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Cras mattis consectetur purus sit amet fermentum. Donec sed odio dui. Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                  </p>
-                </div>
-                <div class="tabs-panel" id="presentations">
-                  <h4>Presentations</h4>
-                  <p>
-                    Nullam id dolor id nibh ultricies vehicula ut id elit. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Cras mattis consectetur purus sit amet fermentum. Donec sed odio dui. Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                  </p>
-                  <p>
-                    Nullam id dolor id nibh ultricies vehicula ut id elit. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Cras mattis consectetur purus sit amet fermentum. Donec sed odio dui. Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                  </p>
-                  <p>
-                    Nullam id dolor id nibh ultricies vehicula ut id elit. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Cras mattis consectetur purus sit amet fermentum. Donec sed odio dui. Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                  </p>
-                </div>
-                <div class="tabs-panel" id="publications">
-                  <h4>Publications</h4>
-                  <p>
-                    Nullam id dolor id nibh ultricies vehicula ut id elit. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Cras mattis consectetur purus sit amet fermentum. Donec sed odio dui. Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                  </p>
-                  <p>
-                    Nullam id dolor id nibh ultricies vehicula ut id elit. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Cras mattis consectetur purus sit amet fermentum. Donec sed odio dui. Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                  </p>
-                  <p>
-                    Nullam id dolor id nibh ultricies vehicula ut id elit. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Cras mattis consectetur purus sit amet fermentum. Donec sed odio dui. Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                  </p>
-                </div>
+              <div class="tabs-content" data-tabs-content="profile-tabs" id="profile-tabs-content">
+                {{#if has_bio_info}}
+                  <div class="tabs-panel" id="bio">
+                    {{#if bio}}          
+                      <h4>Biography</h4>
+                      <p>{{bio}}</p>
+                    {{/if}}
+                    {{#if teaching_interests}}
+                      <h4>Teaching Interests</h4>
+                      <p>{{teaching_interests}}</p>                    
+                    {{/if}}
+                    {{#if research_interests}}
+                      <h4>Research Interests</h4>
+                      <p>{{research_interests}}</p>                    
+                    {{/if}}
+                    {{#if has_education_history}}
+                      <h4>Education</h4>
+                      <ul class="unstyled">
+                        {{#each education_history}}
+                          <li>{{this}}</li>
+                        {{/each}}
+                      </ul>
+                    {{/if}}
+                  </div>
+                {{/if}}
+
+                {{#if has_publications}}
+                  <div class="tabs-panel" id="publications">
+                    <h4>Publications</h4>
+                    {{#each publications}}
+                      <p>{{{this}}}</p>
+                    {{/each}}
+                  </div>
+                {{/if}}
+
+                {{#if has_grants}}
+                  <div class="tabs-panel" id="grants">
+                    <h4>Grants</h4>
+                    {{#each grants}}
+                      <p>{{this}}</p>
+                    {{/each}}
+                  </div>
+                {{/if}}
+
+                {{#if has_presentations}}
+                  <div class="tabs-panel" id="presentations">
+                    <h4>Presentations</h4>
+                    {{#each presentations}}
+                      <p>{{this}}</p>
+                    {{/each}}
+                  </div>
+                {{/if}}
+
+                {{#if has_performances}}
+                  <div class="tabs-panel" id="performances">
+                    <h4>Performances</h4>
+                    {{#each performances}}
+                      <p>{{this}}</p>
+                    {{/each}}
+                  </div>
+                {{/if}}
+
+                {{#if has_advising_roles}}
+                  <div class="tabs-panel" id="advising">
+                    <h4>Advising</h4>
+                    {{#each advising_roles}}
+                      <p>{{{this}}}</p>
+                    {{/each}}
+                  </div>
+                {{/if}}
+
+                {{#if has_news_stories}}
+                  <div class="tabs-panel" id="news">
+                    <h4>News</h4>
+                    {{#each news_stories}}
+                      <p>{{{this}}}</p>
+                    {{/each}}
+                  </div>
+                {{/if}}
               </div>
             </div>
           </div>
         </div>
-
-
-
-			<!-- 
-
-			<div id="tabs">
-				<ul class="nav nav-tabs">
-					{{#if has_publications}}
-						<li><a href="#md-publications">Publications</a></li>
-					{{/if}}
-					{{#if has_grants}}
-						<li><a href="#md-grants">Grants</a></li>
-					{{/if}}
-					{{#if has_presentations}}
-						<li><a href="#md-presentations">Presentations</a></li>
-					{{/if}}
-					{{#if has_performances}}
-						<li><a href="#md-performances">Performances</a></li>
-					{{/if}}
-					{{#if has_advising_roles}}
-						<li><a href="#md-advising-roles">Advising</a></li>
-					{{/if}}
-					{{#if has_news_stories}}
-						<li><a href="#md-news-stories">News</a></li>
-					{{/if}}
-				</ul>
-				{{#if has_publications}}
-					<div id="md-publications">
-						<ul class="md-list">
-							{{#each publications}}
-								<li>{{{this}}}</li>
-							{{/each}}
-						</ul>
-					</div>
-				{{/if}}
-				{{#if has_grants}}
-					<div id="md-grants">
-						<ul class="md-list">
-							{{#each grants}}
-								<li>{{this}}</li>
-							{{/each}}
-						</ul>
-					</div>
-				{{/if}}
-				{{#if has_presentations}}
-					<div id="md-presentations">
-						<ul class="md-list">
-							{{#each presentations}}
-								<li>{{this}}</li>
-							{{/each}}
-						</ul>
-					</div>
-				{{/if}}
-				{{#if has_performances}}
-					<div id="md-performances">
-						<ul class="md-list">
-							{{#each performances}}
-								<li>{{this}}</li>
-							{{/each}}
-						</ul>
-					</div>
-				{{/if}}
-				{{#if has_advising_roles}}
-					<div id="md-advising-roles">
-						<ul class="md-list">
-							{{#each advising_roles}}
-								<li>{{{this}}}</li>
-							{{/each}}
-						</ul>
-					</div>
-				{{/if}}
-				{{#if has_news_stories}}
-					<div id="md-news-stories">
-						<ul class="md-list">
-							{{#each news_stories}}
-								<li>{{{this}}}</li>
-							{{/each}}
-						</ul>
-					</div>
-				{{/if}}
-			</div> -->
 		</script>
 	</head>
 	
-
   <body>
     <div class="title-bar" data-responsive-toggle="lower-nav" data-hide-for="large">
       <a href="#"><img src="img/logo.png" alt="Penn State" /></a>
@@ -300,9 +212,11 @@
         </ul>
       </nav>
     </div>
+
     <div id="profile">
       <!-- rendered profile template gets inserted here -->
     </div>
+    
     <footer>
       <div class="grid-x grid-margin-x">
         <nav class="cell">
