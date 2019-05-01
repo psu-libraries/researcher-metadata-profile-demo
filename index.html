@@ -151,13 +151,13 @@
                   <div class="tabs-panel" id="advising">
                     <h4>Graduate Advising</h4>
                     {{#if has_phd_advising_roles}}
-                      <h5>PhD Dissertations</h5>
+                      <h5>PhD Committees</h5>
                       {{#each phd_advising_roles}}
                         <p>{{{this}}}</p>
                       {{/each}}
                     {{/if}}
                     {{#if has_master_advising_roles}}
-                    <h5>Master Theses</h5>
+                    <h5>Masters Committees</h5>
                     {{#each master_advising_roles}}
                       <p>{{{this}}}</p>
                     {{/each}}
