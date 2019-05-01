@@ -26,7 +26,13 @@ $("document").ready(function() {
       return this.performances.length > 0;
     }
     context.has_advising_roles = function(){
-      return this.advising_roles.length > 0;
+      return this.master_advising_roles.length > 0 || this.phd_advising_roles.length;
+    }
+    context.has_master_advising_roles = function(){
+      return this.master_advising_roles.length > 0
+    }
+    context.has_phd_advising_roles = function(){
+      return this.phd_advising_roles.length > 0
     }
     context.has_news_stories = function(){
       return this.news_stories.length > 0;
