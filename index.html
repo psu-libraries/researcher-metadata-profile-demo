@@ -49,7 +49,10 @@
                     </tbody>
                   </table>
                   {{#if pure_profile_url}}
-                    <a href="{{pure_profile_url}}" target="_blank">Pure Profile</a>
+                    <p><a href="{{pure_profile_url}}" target="_blank">Pure Profile</a></p>
+                  {{/if}}
+                  {{#if orcid_identifier}}
+                    <p><a href="{{orcid_identifier}}" target="_blank">ORCID iD</a></p>
                   {{/if}}
                 </div>
               </div>
