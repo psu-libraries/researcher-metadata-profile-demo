@@ -20,6 +20,9 @@
                   {{#if title}}
                     <p class="role">{{title}}</p>
                   {{/if}}
+                  {{#if organization_name}}
+                    <p>{{organization_name}}</p>
+                  {{/if}}
                 </div>
                 <div class="profile-info">
                   <table>
@@ -28,6 +31,12 @@
                         <tr>
                           <td><img src="img/address.png" alt="Address" /></td>
                           <td>{{office_location}}</td>
+                        </tr>
+                      {{/if}}
+                      {{#if office_phone_number}}
+                        <tr>
+                          <td><img src="img/phone.png" alt="Phone" /></td>
+                          <td>{{office_phone_number}}</td>
                         </tr>
                       {{/if}}
                       <tr>
