@@ -1,6 +1,6 @@
 ![Penn State Libraries Logo](https://metadata.libraries.psu.edu/psu_libraries.png)
 
-# Research Metadata Profile Demo
+# Researcher Metadata Profile Demo
 
 This is a static HTML site used to demonstrate the capabilities of the [PSU Research Metadata](https://metadata.libraries.psu.edu) application's faculty profile [API](https://metadata.libraries.psu.edu/api_docs/swagger_docs/v1#!/user/findUserProfile). A copy of it is currently hosted [here](https://profile-demo.libraries.psu.edu/index.html). On this demo site, you can load a profile for a faculty member (assuming that they are in the database) by appending their Penn State WebAccess ID (`pjh18`, for example) to the end of the URL like so:  [https://profile-demo.libraries.psu.edu/index.html#pjh18](https://profile-demo.libraries.psu.edu/index.html#pjh18) and refreshing the page.
 
