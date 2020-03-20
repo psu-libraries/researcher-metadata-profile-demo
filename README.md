@@ -19,3 +19,7 @@ There is currently no automated deployment for this site. To deploy:
 3. Go to the document root for the site:  `cd /var/www/sites/metadata_profile_demo`
 4. Fetch changes from GitHub:  `git fetch`
 5. Merge any new changes - for example, if the master branch is currently checked out:  `git merge origin/master`
+
+
+
+This project was developed by the The Pennsylvania State University Libraries Digital Scholarship and Repository Development team in collaboration with [West Arete](https://westarete.com).
