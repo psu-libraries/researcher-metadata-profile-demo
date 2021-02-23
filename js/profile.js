@@ -16,6 +16,9 @@ $("document").ready(function() {
     context.has_publications = function(){
       return this.publications.length > 0;
     }
+    context.has_other_publications = function(){
+      return (typeof this.other_publications != "undefined");
+    }
     context.has_grants = function(){
       return this.grants.length > 0;
     }
