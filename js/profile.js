@@ -17,7 +17,7 @@ $("document").ready(function() {
       return this.publications.length > 0;
     }
     context.has_other_publications = function(){
-      return (typeof this.other_publications != "undefined");
+      return (Object.keys(this.other_publications).length > 0);
     }
     context.has_grants = function(){
       return this.grants.length > 0;
