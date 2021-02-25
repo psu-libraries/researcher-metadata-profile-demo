@@ -96,7 +96,10 @@
                 {{/if}}
                 {{#if has_news_stories}}
                   <li class="tabs-title"><a href="#news" data-tabs-target="news">News</a></li>
-                {{/if}}                
+                {{/if}}
+                {{#if has_other_publications}}
+                  <li class="tabs-title"><a href="#other_publications" data-tabs-target="other-publications">Other Works</a></li>
+                {{/if}}
               </ul>
               <div class="tabs-content" data-tabs-content="profile-tabs" id="profile-tabs-content">
                 {{#if has_bio_info}}
@@ -183,6 +186,17 @@
                     <h4>News</h4>
                     {{#each news_stories}}
                       <p>{{{this}}}</p>
+                    {{/each}}
+                  </div>
+                {{/if}}
+
+                {{#if has_other_publications}}
+                  <div class="tabs-panel" id="other-publications">
+                    {{#each other_publications}}
+                      <h4>{{@key}}</h4>
+                      {{#each this}}
+                        <p>{{{this}}}</p>
+                      {{/each}}
                     {{/each}}
                   </div>
                 {{/if}}
