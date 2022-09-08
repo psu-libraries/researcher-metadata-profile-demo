@@ -15,8 +15,8 @@ If you have Ruby and WEBrick installed, you can serve this site locally by going
 There is currently no automated deployment for this site. To deploy:
 
 1. Connect to the Penn State VPN
-2. SSH as the deploy user to the server:  `ssh -p 1855 deploy@researchprofile1prod.vmhost.psu.edu`
-3. Go to the document root for the site:  `cd /var/www/sites/metadata_profile_demo`
+2. SSH as the deploy user to the server:  `ssh -p 1855 deploy@rmdprofile1prod.vmhost.psu.edu`
+3. Go to the document root for the site:  `cd /var/www/sites/rmd_profile_demo`
 4. Fetch changes from GitHub:  `git fetch`
 5. Merge any new changes - for example, if the master branch is currently checked out:  `git merge origin/master`
 
