@@ -1,0 +1,62 @@
+version: 2.1
+orbs:
+  docker: circleci/docker@2.2.0
+
+jobs:
+  build-and-push:
+    executor: docker/docker
+    environment:
+      REGISTRY_HOST: harbor.k8s.libraries.psu.edu
+      REGISTRY_URL: library/researcher-metadata-profile-demo
+    steps:
+    - setup_remote_docker
+    - checkout
+    - docker/check:
+        registry: $REGISTRY_HOST
+    - docker/build:
+        image: $REGISTRY_URL
+        registry: $REGISTRY_HOST
+    - docker/push:
+        image: $REGISTRY_URL
+        registry: $REGISTRY_HOST
+
+  release:
+    executor: docker/docker
+    environment:
+      REGISTRY_HOST: harbor.k8s.libraries.psu.edu
+      REGISTRY_URL: library/researcher-metadata-profile-demo
+    steps:
+    - setup_remote_docker
+    - checkout
+    - docker/check:
+        registry: $REGISTRY_HOST
+    - docker/build:
+        image: $REGISTRY_URL
+        registry: $REGISTRY_HOST
+        tag: $CIRCLE_TAG
+    - docker/push:
+        image: $REGISTRY_URL
+        registry: $REGISTRY_HOST
+        tag: $CIRCLE_TAG
+
+
+
+workflows:
+  version: 2
+  docker_push:
+    jobs:
+      - build-and-push:
+          context: org-global
+          filters:
+            branches:
+              only:
+                - main
+
+      - release:
+          context: org-global
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only:
+                - /.*/
